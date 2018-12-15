@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#2f4f4f">
+{% include "index.html" %}
+
+
+<form action="/userRegister/?type=h_userRegister" method="post">
+    {% csrf_token %}
+    <table align="center" border="2" bgcolor="aqua" width="250">
+    <tr>
+        <th><font face="arial" font bgcolor="#708090">User registration</font></th>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Firstname" name="user_fname" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="Lastname" name="user_lname" required>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="user_state"> State
+                <option>state</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="user_city">City
+                <option>city</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="email" placeholder="email" name="user_email" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="password" placeholder="password" name="user_paswword" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="date" placeholder="date" name="user_dor" required>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="register">
+        </td>
+    </tr>
+        <tr>
+            <td>
+                {{ message }}
+            </td>
+        </tr>
+
+</table>
+</form>
+
+<h3><font face="arial" font color="#ffffe0"><marquee> If you are already register,please Log in here</marquee></font></h3>
+<form action="/loginUser/"  method="post">
+<table align="center" border="2" bgcolor="aqua">
+    <tr bgcolor="aqua">
+        <td><font face="Arial">
+            Log In
+        </font></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="email" placeholder="username(emailId)" name="user_email">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" placeholder="password" name="user_password">
+        </td>
+    </tr>
+    <tr>
+        <td>
+                        <input type="submit" value="login">
+
+        </td>
+    </tr>
+
+</table>
+</form>
+
+
+</body>
+</html>
+</body>
+</html>
